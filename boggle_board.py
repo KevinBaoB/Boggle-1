@@ -13,8 +13,11 @@ class BoggleBoard:
   def shake(self):
     
     for i, under_score in enumerate(self.game_board):
-      random_letter = random.choice(string.ascii_letters)
-      self.game_board[i] = random_letter
+      random_letter = (random.choice(string.ascii_letters)).upper()
+      if(random_letter == 'Q'):
+        self.game_board[i] = 'Qu'
+      else:
+        self.game_board[i] = random_letter
 
 
   def view_game_board(self):
@@ -22,7 +25,7 @@ class BoggleBoard:
 
   def print_board(self):
     for i in range(0, len(self.game_board), 4):
-      print("".join(self.game_board[i:i+4]))
+      print(" ".join(self.game_board[i:i+4]))
 
   
 
